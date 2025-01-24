@@ -9,7 +9,8 @@ const connectDB = async () => {
   }
 
   if (!process.env.MONGODB_URI) {
-    throw new Error("MONGODB_URI is not defined in environment variables");
+    console.log("MONGODB_URI is not defined in environment variables");
+    // ("MONGODB_URI is not defined in environment variables");
   }
 
   try {
@@ -22,7 +23,7 @@ const connectDB = async () => {
     console.log("MongoDB connected successfully!");
   } catch (error) {
     console.error("MongoDB connection error:", error.message);
-    throw new Error("Failed to connect to MongoDB");
+    console.log("Failed to connect to MongoDB");
   }
 };
 
